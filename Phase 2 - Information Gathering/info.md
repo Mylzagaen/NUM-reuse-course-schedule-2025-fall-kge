@@ -107,7 +107,6 @@ The course-schedule-kg.ttl file contained properties such as:
 We used these to generate:
 
 - Time_slot instances
-
 - schedule conflict detection rules
 
 ## 6.4 Standardization and Cleaning
