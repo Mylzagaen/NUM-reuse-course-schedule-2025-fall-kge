@@ -11,16 +11,16 @@ These sources are not fully structured and not iTelos-compliant, requiring addit
 
 We identified and extracted the following informal datasets:
 
-Student Dataset
+- **Student Dataset**
 Contains raw student identifiers, names, enrolment years, and program information extracted from NUM’s student information system.
 This dataset is essential for creating the Student entity and linking students to their curriculum.
 
-Planned Course Dataset
+- **Planned Course Dataset**
 Collected from a prototype advising interface where students record the courses they plan to take next semester.
 Contains student IDs, selected course IDs, timestamps.
 These serve as the foundation for the Planned_course contextual entity used for schedule conflict detection.
 
-Selected Course Dataset
+- **Selected Course Dataset**
 Represents historically chosen courses by students during enrollment periods.
 Includes student ID and course schedule ID.
 These entries are crucial for modeling student behaviors and validating progression toward curriculum requirements.
