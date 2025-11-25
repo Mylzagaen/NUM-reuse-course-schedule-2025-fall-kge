@@ -16,7 +16,7 @@ Contains raw student identifiers, names, enrolment years, and program informatio
 This dataset is essential for creating the Student entity and linking students to their curriculum.
 
 - **Planned Course Dataset**
-Collected from a prototype advising interface where students record the courses they plan to take next semester.
+Collected from a prototype advising interface where students record the courses they plan to take for the Fall 2025 semester.
 Contains student IDs, selected course IDs, timestamps.
 These serve as the foundation for the Planned_course contextual entity used for schedule conflict detection.
 
@@ -63,7 +63,7 @@ The following files were manually exported from NUM:
 Dataset	Format	Description
 student_raw.csv	CSV	Student demographic and academic data
 planned_raw.csv	CSV	Student-entered planned courses
-selected_raw.csv CSV Enrollment selections from year of 2025 fall semester
+selected_raw.csv CSV Enrollment selections from the Fall 2025 semester.
 
 Processing included:
 
