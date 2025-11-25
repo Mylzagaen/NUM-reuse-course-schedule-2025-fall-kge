@@ -88,35 +88,35 @@ and stored them as normalized RDF triples in .ttl format.
 
 For each planned course entry:
 
-validated course_id against course-kg.ttl
+- validated course_id against course-kg.ttl
 
-matched schedule instance via day/time → schedule_id
+- matched schedule instance via day/time → schedule_id
 
-produced Planned_course triples
+- produced Planned_course triples
 
 ### 6.3.3 Schedule Data Integration
 
 The course-schedule-kg.ttl file contained properties such as:
 
-num:Schedule_start (xsd:time)
+- num:Schedule_start (xsd:time)
 
-num:Schedule_end (xsd:time)
+- num:Schedule_end (xsd:time)
 
-num:Day_of_week (string)
+- num:Day_of_week (string)
 
-num:Course_type (string)
+- num:Course_type (string)
 
-num:Course_frequency (integer)
+- num:Course_frequency (integer)
 
-num:has_professor → Person
+- num:has_professor → Person
 
-num:has_location → Room
+- num:has_location → Room
 
 We used these to generate:
 
-Time_slot instances
+- Time_slot instances
 
-schedule conflict detection rules
+- schedule conflict detection rules
 
 ## 6.4 Standardization and Cleaning
 
@@ -144,11 +144,11 @@ linked schedules to curricula using series_of relationships
 
 Using Protege, we reconstructed the ontology representing:
 
-classes: Student, Planned_course, Course_schedule, Curriculum, Course
+- **classes:** Student, Planned_course, Course_schedule, Curriculum, Course
 
-object properties: planned, selects, includes, part_of, has_interval, has_professor
+- **object properties:** planned, selects, includes, part_of, has_interval, has_professor
 
-datatype properties: schedule_start, schedule_end, credits, course_index, etc.
+- **datatype properties:** schedule_start, schedule_end, credits, course_index, etc.
 
 The final ontology integrates all reused and new resources into a unified schema.
 
@@ -157,10 +157,10 @@ The final ontology integrates all reused and new resources into a unified schema
 
 This phase ensured the creation of a clean, unified resource set composed of:
 
-three iTelos-compliant reusable KGs
+- three iTelos-compliant reusable KGs
 
-three newly generated contextual datasets
+- three newly generated contextual datasets
 
-a fully standardized, ontology-ready integrated graph
+- a fully standardized, ontology-ready integrated graph
 
 These resources are now prepared for the Language Definition and Knowledge Definition phases.
