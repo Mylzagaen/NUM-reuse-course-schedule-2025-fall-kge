@@ -77,8 +77,7 @@ Processing included:
 Python scripts extracted attributes such as:
 
 - **student_id**
-- **first_name, last_name**
-- **email**
+- **first_name, last_name** 
 - **enrollment_year**
 - **curriculum_code**
 
