@@ -4,8 +4,8 @@ This section reports the collection, analysis, and processing of all resources t
 
 Our domain of interest is the academic environment of NUM (National University of Mongolia), including curriculum structures, course definitions, and real class schedules. To this end, we relied on three pre-existing iTelos-compliant datasets and generated new informal resources from the university’s internal systems.
 
-## 6.1 Data and Knowledge Sources
-### 6.1.1 Informal Data and Knowledge Sources (Producer)
+## 2.1 Data and Knowledge Sources
+### 2.1.1 Informal Data and Knowledge Sources (Producer)
 
 These sources are not fully structured and not iTelos-compliant, requiring additional cleaning, formatting, and standardization.
 
@@ -27,7 +27,7 @@ These entries are crucial for modeling student behavior patterns and validating 
 
 These datasets were semi-structured (CSV/Excel), contained missing values (e.g., names or curriculum IDs), and required extensive transformation to align with the ER model.
 
-### 6.1.2 Formal Data and Knowledge Sources (Consumer)
+### 2.1.2 Formal Data and Knowledge Sources (Consumer)
 
 These datasets are high-quality, diversity-aware resources that we reuse as the foundation of the knowledge layer:
 
@@ -42,11 +42,11 @@ Provides real course scheduling instances, including day of week, timeslots, ins
 
 These are iTelos-compliant reusable KGs that require minimal processing.
 
-## 6.2 Resource Collection, Processing, and Scraping
+## 2.2 Resource Collection, Processing, and Scraping
 
 We employed both automated and manual extraction approaches depending on data type and format.
 
-### 6.2.1 Course KG Resources (Reuse)
+### 2.2.1 Course KG Resources (Reuse)
 
 The TTL files were retrieved directly from the public repository:
 
@@ -54,7 +54,7 @@ The TTL files were retrieved directly from the public repository:
 - **course-curriculum-kg.ttl**
 - **course-schedule-kg.ttl**
 
-### 6.2.2 Student and Planning Data (New Informal Resources)
+### 2.2.2 Student and Planning Data (New Informal Resources)
 
 The following files were manually exported from NUM:
 
@@ -71,8 +71,8 @@ Processing included:
 - converting timestamps to ISO 8601 format
 - assigning UUIDs to planned_course entries
 
-## 6.3 Data Scraping and Conversion
-### 6.3.1 Student Data Processing
+## 2.3 Data Scraping and Conversion
+### 2.3.1 Student Data Processing
 
 Python scripts extracted attributes such as:
 
@@ -83,7 +83,7 @@ Python scripts extracted attributes such as:
 
 and stored them as normalized RDF triples in .ttl format.
 
-### 6.3.2 Planned Course Processing
+### 2.3.2 Planned Course Processing
 
 For each planned course entry:
 
@@ -91,7 +91,7 @@ For each planned course entry:
 - matched schedule instance via day/time → schedule_id
 - produced Planned_course triples
 
-### 6.3.3 Schedule Data Integration
+### 2.3.3 Schedule Data Integration
 
 The course-schedule-kg.ttl file contained properties such as:
 
@@ -108,11 +108,11 @@ We used these to generate:
 - Time_slot instances
 - schedule conflict detection rules
 
-## 6.4 Standardization and Cleaning
+## 2.4 Standardization and Cleaning
 
 The following steps were applied to all resources:
 
-### 6.4.1 Attribute Standardization
+### 2.4.1 Attribute Standardization
 
 all times converted to xsd:time
 
@@ -122,7 +122,7 @@ day-of-week normalized to English + Mongolian tags
 
 course intervals converted to xsd:duration
 
-### 6.4.2 Entity Reconciliation
+### 2.4.2 Entity Reconciliation
 
 matched student-entered course codes → course-kg.ttl course_index
 
@@ -130,7 +130,7 @@ resolved ambiguous course names using num:Entity_name resources
 
 linked schedules to curricula using series_of relationships
 
-## 6.5 Ontology Integration (Consumer-side Formalization)
+## 2.5 Ontology Integration (Consumer-side Formalization)
 
 Using Protege, we reconstructed the ontology representing:
 
@@ -143,7 +143,7 @@ Using Protege, we reconstructed the ontology representing:
 The final ontology integrates all reused and new resources into a unified schema.
 
 
-## 6.6 Summary
+## 2.6 Summary
 
 This phase ensured the creation of a clean, unified resource set composed of:
 
