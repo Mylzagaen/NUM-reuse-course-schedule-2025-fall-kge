@@ -89,9 +89,7 @@ and stored them as normalized RDF triples in .ttl format.
 For each planned course entry:
 
 - validated course_id against course-kg.ttl
-
 - matched schedule instance via day/time → schedule_id
-
 - produced Planned_course triples
 
 ### 6.3.3 Schedule Data Integration
@@ -99,17 +97,11 @@ For each planned course entry:
 The course-schedule-kg.ttl file contained properties such as:
 
 - num:Schedule_start (xsd:time)
-
 - num:Schedule_end (xsd:time)
-
 - num:Day_of_week (string)
-
 - num:Course_type (string)
-
 - num:Course_frequency (integer)
-
 - num:has_professor → Person
-
 - num:has_location → Room
 
 We used these to generate:
