@@ -1,4 +1,4 @@
-Information Gathering
+**Information Gathering**
 
 This section reports the collection, analysis, and processing of all resources that form the foundation of our Knowledge Graph (KG), which integrates existing reusable knowledge graphs and newly produced student-specific contextual data. The goal of this stage was to gather and classify all relevant language, knowledge, and data resources needed to model curriculum structures, course offerings, student plans, and schedule-based constraints.
 
