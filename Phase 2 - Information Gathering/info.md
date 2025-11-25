@@ -21,23 +21,23 @@ Contains student IDs, selected course IDs, timestamps.
 These serve as the foundation for the Planned_course contextual entity used for schedule conflict detection.
 
 - **Selected Course Dataset**
-Represents historically chosen courses by students during enrollment periods.
-Includes student ID and course schedule ID.
-These entries are crucial for modeling student behaviors and validating progression toward curriculum requirements.
+Represents historically chosen courses by students during enrollment periods, specifically including selections made for the Fall 2025 semester.
+The dataset includes student IDs and course schedule IDs.
+These entries are crucial for modeling student behavior patterns and validating progression toward curriculum requirements.
 
-These datasets were semi-structured (CSV/Excel), contained missing values (e.g., names, or curriculum IDs), and required extensive transformation to align with the ER model.
+These datasets were semi-structured (CSV/Excel), contained missing values (e.g., names or curriculum IDs), and required extensive transformation to align with the ER model.
 
 ### 6.1.2 Formal Data and Knowledge Sources (Consumer)
 
 These datasets are high-quality, diversity-aware resources that we reuse as the foundation of the knowledge layer:
 
-Course Knowledge Graph (course-kg.ttl)
+- **Course Knowledge Graph (course-kg.ttl)**
 Contains canonical course definitions at NUM, including course codes, labels, names (in multiple languages), credits, academic terms, and department affiliations.
 
-Curriculum–Course Knowledge Graph (course-curriculum-kg.ttl)
+- **Curriculum–Course Knowledge Graph (course-curriculum-kg.ttl)**
 Describes curriculum structures, including which courses belong to which curriculum, their categories (core/elective), and recommended semesters.
 
-Course Schedule Knowledge Graph (course-schedule-kg.ttl)
+- **Course Schedule Knowledge Graph (course-schedule-kg.ttl)**
 Provides real course scheduling instances, including day of week, timeslots, instructors, classroom locations, and academic term/year.
 
 These are iTelos-compliant reusable KGs that require minimal processing.
@@ -50,11 +50,9 @@ We employed both automated and manual extraction approaches depending on data ty
 
 The TTL files were retrieved directly from the public repository:
 
-course-kg.ttl
-
-course-curriculum-kg.ttl
-
-course-schedule-kg.ttl
+- **course-kg.ttl**
+- **course-curriculum-kg.ttl**
+- **course-schedule-kg.ttl**
 
 ### 6.2.2 Student and Planning Data (New Informal Resources)
 
@@ -67,30 +65,22 @@ selected_raw.csv CSV Enrollment selections from the Fall 2025 semester.
 
 Processing included:
 
-removing duplicate student IDs
-
-normalizing name formats
-
-aligning course identifiers to those in course-kg.ttl
-
-converting timestamps to ISO 8601 format
-
-assigning UUIDs to planned_course entries
+- removing duplicate student IDs
+- normalizing name formats
+- aligning course identifiers to those in course-kg.ttl
+- converting timestamps to ISO 8601 format
+- assigning UUIDs to planned_course entries
 
 ## 6.3 Data Scraping and Conversion
 ### 6.3.1 Student Data Processing
 
 Python scripts extracted attributes such as:
 
-student_id
-
-first_name, last_name
-
-email
-
-enrollment_year
-
-curriculum_code
+- **student_id**
+- **first_name, last_name**
+- **email**
+- **enrollment_year**
+- **curriculum_code**
 
 and stored them as normalized RDF triples in .ttl format.
 
