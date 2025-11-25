@@ -1,11 +1,11 @@
-**Information Gathering**
+# Information Gathering
 
 This section reports the collection, analysis, and processing of all resources that form the foundation of our Knowledge Graph (KG), which integrates existing reusable knowledge graphs and newly produced student-specific contextual data. The goal of this stage was to gather and classify all relevant language, knowledge, and data resources needed to model curriculum structures, course offerings, student plans, and schedule-based constraints.
 
 Our domain of interest is the academic environment of NUM (National University of Mongolia), including curriculum structures, course definitions, and real class schedules. To this end, we relied on three pre-existing iTelos-compliant datasets and generated new informal resources from the university’s internal systems.
 
-6.1 Data and Knowledge Sources
-6.1.1 Informal Data and Knowledge Sources (Producer)
+## 6.1 Data and Knowledge Sources
+### 6.1.1 Informal Data and Knowledge Sources (Producer)
 
 These sources are not fully structured and not iTelos-compliant, requiring additional cleaning, formatting, and standardization.
 
@@ -27,7 +27,7 @@ These entries are crucial for modeling student behaviors and validating progress
 
 These datasets were semi-structured (CSV/Excel), contained missing values (e.g., names, or curriculum IDs), and required extensive transformation to align with the ER model.
 
-6.1.2 Formal Data and Knowledge Sources (Consumer)
+### 6.1.2 Formal Data and Knowledge Sources (Consumer)
 
 These datasets are high-quality, diversity-aware resources that we reuse as the foundation of the knowledge layer:
 
@@ -42,11 +42,11 @@ Provides real course scheduling instances, including day of week, timeslots, ins
 
 These are iTelos-compliant reusable KGs that require minimal processing.
 
-6.2 Resource Collection, Processing, and Scraping
+## 6.2 Resource Collection, Processing, and Scraping
 
 We employed both automated and manual extraction approaches depending on data type and format.
 
-6.2.1 Course KG Resources (Reuse)
+### 6.2.1 Course KG Resources (Reuse)
 
 The TTL files were retrieved directly from the public repository:
 
@@ -56,7 +56,7 @@ course-curriculum-kg.ttl
 
 course-schedule-kg.ttl
 
-6.2.2 Student and Planning Data (New Informal Resources)
+### 6.2.2 Student and Planning Data (New Informal Resources)
 
 The following files were manually exported from NUM:
 
@@ -77,8 +77,8 @@ converting timestamps to ISO 8601 format
 
 assigning UUIDs to planned_course entries
 
-6.3 Data Scraping and Conversion
-6.3.1 Student Data Processing
+## 6.3 Data Scraping and Conversion
+### 6.3.1 Student Data Processing
 
 Python scripts extracted attributes such as:
 
@@ -94,7 +94,7 @@ curriculum_code
 
 and stored them as normalized RDF triples in .ttl format.
 
-6.3.2 Planned Course Processing
+### 6.3.2 Planned Course Processing
 
 For each planned course entry:
 
@@ -104,7 +104,7 @@ matched schedule instance via day/time → schedule_id
 
 produced Planned_course triples
 
-6.3.3 Schedule Data Integration
+### 6.3.3 Schedule Data Integration
 
 The course-schedule-kg.ttl file contained properties such as:
 
@@ -128,11 +128,11 @@ Time_slot instances
 
 schedule conflict detection rules
 
-6.4 Standardization and Cleaning
+## 6.4 Standardization and Cleaning
 
 The following steps were applied to all resources:
 
-6.4.1 Attribute Standardization
+### 6.4.1 Attribute Standardization
 
 all times converted to xsd:time
 
@@ -142,7 +142,7 @@ day-of-week normalized to English + Mongolian tags
 
 course intervals converted to xsd:duration
 
-6.4.2 Entity Reconciliation
+### 6.4.2 Entity Reconciliation
 
 matched student-entered course codes → course-kg.ttl course_index
 
@@ -150,7 +150,7 @@ resolved ambiguous course names using num:Entity_name resources
 
 linked schedules to curricula using series_of relationships
 
-6.5 Ontology Integration (Consumer-side Formalization)
+## 6.5 Ontology Integration (Consumer-side Formalization)
 
 Using Protege, we reconstructed the ontology representing:
 
@@ -163,7 +163,7 @@ datatype properties: schedule_start, schedule_end, credits, course_index, etc.
 The final ontology integrates all reused and new resources into a unified schema.
 
 
-6.6 Summary
+## 6.6 Summary
 
 This phase ensured the creation of a clean, unified resource set composed of:
 
