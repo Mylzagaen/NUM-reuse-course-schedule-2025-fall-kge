@@ -1,8 +1,8 @@
-#3. Language Definition
+# Language Definition
 
 This section describes the Language Definition phase of the project. As in the previous phase, it outlines the sub-activities carried out by the team and presents the main outcomes produced. The goal of this phase is to define a purpose-specific semantic language capable of supporting academic scheduling and curriculum-related reasoning tasks within the Knowledge Graph.
 
-**3.1 Concept Identification**
+## 3.1 Concept Identification
 
 This activity aimed to identify all concepts necessary to represent the academic scheduling and curriculum domain. The identification process relied on three concrete sources produced in the previous phases:
 (1) the conceptual ER model,
@@ -24,15 +24,15 @@ course_id, schedule_start, schedule_end, start_time, end_time, day_of_week, buil
 
 Together, these concepts capture the structural, relational, and operational elements required for schedule-based reasoning in the Knowledge Graph. During this activity, concepts were classified into Core, Contextual, and Custom categories based on their contribution to Competency Question coverage. Concepts that did not support reasoning tasks or did not appear in the datasets were removed from the language, as documented in Section 7.3.
 
-**3.1.1 Difficulties Encountered**
+### 3.1.1 Difficulties Encountered
 
 The most challenging aspect of concept identification was aligning the ER model with heterogeneous datasets, particularly where the source data did not explicitly distinguish between Course, Course_schedule, Time_slot, and Moment. Several attributes (e.g., day_of_week, course_type, frequency) required careful interpretation to determine whether they should be modeled as independent ETypes or as simple data properties. Additionally, deciding whether Academic_year and Academic_term should be represented as standalone concepts or contextual attributes required multiple iterations and validation against the CQs.
 
-**3.1.2 Aspects That Were Straightforward**
+### 3.1.2 Aspects That Were Straightforward
 
 Core domain concepts such as Student, Course, Curriculum, and Program were easy to identify, as they appeared consistently and explicitly across all datasets and were directly referenced in the Competency Questions. Similarly, linking entities such as Curriculum_course and Prerequisite were straightforward to model, since they already existed as relational tables in the source data.
 
-**3.2 UKC Alignment**
+## 3.2 UKC Alignment
 
 The second activity involved aligning the selected concepts with the Universal Knowledge Core (UKC) to ensure semantic consistency and reuse of established ontology definitions. Each concept was reviewed to determine whether a corresponding UKC entry existed and whether its semantics matched the requirements of the academic scheduling domain.
 
@@ -46,19 +46,19 @@ These represent domain-specific structures or operational activities not covered
 
 Through this alignment, standard concepts benefited from existing ontology definitions, while domain-specific concepts were precisely formalized to support the project’s reasoning requirements. The result is a hybrid conceptual model that balances reuse and customization, ensuring coherence, reusability, and clarity in the purpose-specific language.
 
-**3.2.1 Difficulties Encountered**
+### 3.2.1 Difficulties Encountered
 
 The main challenge was determining whether temporal concepts such as Moment, Time_slot, and Course_schedule could be meaningfully aligned with existing UKC entries. Although partial similarities existed, the semantic mismatch required the creation of new definitions rather than forced mappings. Deciding how deeply to reuse the UKC event hierarchy also required careful consideration.
 
-**3.2.2 Aspects That Were Straightforward**
+### 3.2.2 Aspects That Were Straightforward
 
 Aligning Student, Course, Program, and Curriculum was straightforward, as all have well-established equivalents in UKC and are also consistently mapped in related vocabularies such as schema.org and VIVO. This ensured clear semantic grounding and minimized the need for additional clarification.
 
-**3.3 Dataset Filtering**
+## 3.3 Dataset Filtering
 
 In this stage, all collected resources were examined to determine whether they were necessary, connected, and semantically useful for the Knowledge Graph. Elements marked in red in the original spreadsheet were identified as unused or redundant and were therefore removed. The primary goal of filtering was to keep the graph minimal, coherent, and focused on entities and relations that directly support reasoning tasks such as schedule validation and duplicate detection.
 
-**3.3.1 Removed Elements and Justification**
+### 3.3.1 Removed Elements and Justification
 
 The following classes and properties were excluded:
 
@@ -74,7 +74,7 @@ Credit hours are not used in any Competency Questions or reasoning tasks related
 planned_id, selected_id, timestamp:
 These system-level metadata fields were not semantically connected to other entities and would have resulted in isolated nodes.
 
-**3.3.2 Filtering Rationale**
+### 3.3.2 Filtering Rationale
 
 Filtering decisions were guided by the following principles:
 
@@ -88,7 +88,7 @@ Reduce overall model complexity
 
 This ensured that the Knowledge Graph remained efficient, interpretable, and focused on its intended purpose.
 
-**3.4 Phase Outcomes**
+## 3.4 Phase Outcomes
 
 The Language Definition phase produced the following key outputs:
 
@@ -104,6 +104,6 @@ A simplified yet semantically robust schema supporting effective reasoning tasks
 Final Language Resource Sheet
 A consolidated spreadsheet containing identifiers, labels, glosses, superclasses, and mappings, ready for Phase 4 (Resource-to-KG Mapping).
 
-**3.5 Summary**
+## 3.5 Summary
 
 The Language Definition phase established a well-structured, purpose-specific semantic language for constructing the Knowledge Graph. Through systematic Concept Identification, UKC Alignment, and Dataset Filtering, only essential concepts were retained, terminology was standardized, and unnecessary complexity was eliminated. This phase provides a strong and reliable foundation for the subsequent stages of the iTelos methodology.
