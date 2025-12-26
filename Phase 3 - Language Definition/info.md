@@ -1,4 +1,4 @@
-**3. Language Definition**
+#3. Language Definition
 
 This section describes the Language Definition phase of the project. As in the previous phase, it outlines the sub-activities carried out by the team and presents the main outcomes produced. The goal of this phase is to define a purpose-specific semantic language capable of supporting academic scheduling and curriculum-related reasoning tasks within the Knowledge Graph.
 
