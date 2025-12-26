@@ -1,2 +1,3 @@
-# ProjectRepositoryTemplate
-This is a template fort all the KGE projects repository. In general the structure of this repository has to be applied to every iTelos project.
+This document is a detailed Project Report on building an integrated Knowledge Graph (Integration KG) within the context of the National University of Mongolia, focusing specifically on academic operations—particularly course scheduling—using the iTelos Knowledge
+Graph Engineering (KGE) methodology. The project is conducted within the scope of ten selected academic programs, reusing existing Knowledge Graphs—such as the Courses KG, Course–Curriculum Relations KG, and Course Schedule KG—and integrating them with newly
+developed KGs, including the Student KG, Planned Course KG, and Curriculum–Student KG. Through this integration, the project extends existing course schedule data with curriculum required and student-planned courses for ten programs, enabling the detection of scheduling conflicts, curriculum overlaps, and other academic inconsistencies.
