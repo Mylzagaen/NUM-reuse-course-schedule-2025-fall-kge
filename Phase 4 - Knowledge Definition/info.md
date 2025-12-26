@@ -10,25 +10,25 @@ In this phase, the concepts defined in the Language Definition phase were used a
 
 Following the iTelos methodology, the kTelos process was applied by reviewing the finalized language resource and encoding the identified entity types, object properties, and data properties as OWL classes and properties. This ensured direct traceability between the language definition and the resulting ontology.
 
-Core domain concepts such as Student, Program, Curriculum, Course, and Time_slot were modeled as general classes, reflecting their central role in the academic scheduling domain.
+Core domain concepts such as **Student, Program, Curriculum, Course**, and **Time_slot** were modeled as general classes, reflecting their central role in the academic scheduling domain.
 
-Project-specific concepts, including Course_schedule, Curriculum_course, Planned_course, and Selected_course, were introduced to explicitly represent relationships and course selection states that are not directly captured by generic educational ontologies.
+Project-specific concepts, including **Course_schedule, Curriculum_course, Planned_course,** and **Selected_course**, were introduced to explicitly represent relationships and course selection states that are not directly captured by generic educational ontologies.
 
-The ontology distinguishes between Action and Event to separate student-driven planning and selection operations from time-bound academic occurrences:
+- The ontology distinguishes between Action and Event to separate student-driven planning and selection operations from time-bound academic occurrences:
 
-Action represents conceptual operations such as planning or selecting courses, describing a student’s academic intent or state rather than a temporal occurrence.
+- Action represents conceptual operations such as planning or selecting courses, describing a student’s academic intent or state rather than a temporal occurrence.
 
-Event represents scheduled academic activities that occur at specific times, such as course schedules and time slots.
+- Event represents scheduled academic activities that occur at specific times, such as course schedules and time slots.
 
 This separation avoids conflating decision-related concepts with temporal events and accurately reflects the structure of the source datasets.
 
 In the current project, Prerequisite represents a simple dependency indicating that one course must be completed before another course can be taken within a specific curriculum. The prerequisite information is defined by three identifiers:
 
-curriculum_id
+- **curriculum_id**
 
-pre_course_id
+- **pre_course_id**
 
-course_id
+- **course_id**
 
 Although this dependency could be modeled as a direct object property between Course entities, it was modeled as a separate class to ensure a direct and lossless mapping from the source dataset, where prerequisite information is represented as an explicit relational table. In the current implementation, the Prerequisite class does not introduce additional semantics beyond representing this relationship.
 
@@ -44,25 +44,25 @@ Column names in all datasets were adjusted to match the corresponding classes an
 
 All aligned datasets were consolidated into a single Excel file named aligned_datasets.xlsx, where each dataset is represented as a separate sheet:
 
-Student → Student entities
+- **Student** → Student entities
 
-Curriculum → Curriculum entities
+- **Curriculum** → Curriculum entities
 
-Program → Program entities
+- **Program** → Program entities
 
-Course → Course entities
+- **Course** → Course entities
 
-Course_schedule → Course schedule entities
+- **Course_schedule** → Course schedule entities
 
-Time_slot → Course schedule time slots
+- **Time_slot** → Course schedule time slots
 
-Prerequisite → Prerequisite relations
+- **Prerequisite** → Prerequisite relations
 
-Curriculum_course → Curriculum–Course relations
+- **Curriculum_course** → Curriculum–Course relations
 
-Planned_course → Planned course selections
+- **Planned_course** → Planned course selections
 
-Selected_course → Selected course records
+- **Selected_course** → Selected course records
 
 This step ensures that all datasets are structurally consistent with the ontology and ready for instantiation in the Knowledge Graph.
 
@@ -70,11 +70,11 @@ This step ensures that all datasets are structurally consistent with the ontolog
 
 The Knowledge Definition phase resulted in the following outcomes:
 
-An OWL knowledge teleontology formally encoding the conceptual vocabulary defined in the Language Definition phase.
+- An OWL knowledge teleontology formally encoding the conceptual vocabulary defined in the Language Definition phase.
 
-A Knowledge Graph schema describing students, programs, curricula, courses, schedules, and their relationships.
+- A Knowledge Graph schema describing students, programs, curricula, courses, schedules, and their relationships.
 
-A set of aligned datasets whose structure and data types are consistent with the ontology and ready for Knowledge Graph instantiation in the subsequent phase.
+- A set of aligned datasets whose structure and data types are consistent with the ontology and ready for Knowledge Graph instantiation in the subsequent phase.
 
 ## 4.4 Summary
 
