@@ -22,7 +22,7 @@ These entities model many-to-many relationships, prerequisite constraints, and s
 - **Data and auxiliary properties:**
 course_id, schedule_start, schedule_end, start_time, end_time, day_of_week, building_name, room_number, group_name, and similar attributes directly extracted from the source tables.
 
-Together, these concepts capture the structural, relational, and operational elements required for schedule-based reasoning in the Knowledge Graph. During this activity, concepts were classified into Core, Contextual, and Custom categories based on their contribution to Competency Question coverage. Concepts that did not support reasoning tasks or did not appear in the datasets were removed from the language, as documented in Section 7.3.
+Together, these concepts capture the structural, relational, and operational elements required for schedule-based reasoning in the Knowledge Graph. During this activity, concepts were classified into Core, Contextual, and Custom categories based on their contribution to Competency Question coverage. Concepts that did not support reasoning tasks or did not appear in the datasets were removed from the language, as documented in Section 3.3.
 
 ### 3.1.1 Difficulties Encountered
 
