@@ -1,4 +1,4 @@
-# 5. Entity Definition
+# Entity Definition
 
 This section describes the **Entity Definition** phase of the *iTelos methodology*. Building on the outcomes of the *Data Preparation* and *Language Definition* phases, this phase focuses on translating the abstract conceptual model into concrete, instantiable entities. The main objective is to ensure that all real-world instances from the prepared datasets are consistently identified, correctly matched, and accurately mapped to the knowledge teleontology before constructing the Knowledge Graph.
 
