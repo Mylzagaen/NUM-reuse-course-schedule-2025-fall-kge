@@ -11,15 +11,15 @@ This activity aimed to identify all concepts necessary to represent the academic
 
 Based on these sources, the following concept groups were identified:
 
-Core EType concepts:
+- **Core EType concepts:**
 Student, Curriculum, Program, Course, Course_schedule, Time_slot, Academic_year, Academic_term, Moment.
 These represent the main academic objects required to describe course offerings, institutional structure, and temporal organization.
 
-Linking and activity entities:
+- **Linking and activity entities:**
 Curriculum_course, Prerequisite, Planned_course, Selected_course.
 These entities model many-to-many relationships, prerequisite constraints, and student activity records, which are essential for reasoning tasks such as curriculum validation and schedule conflict detection.
 
-Data and auxiliary properties:
+- **Data and auxiliary properties:**
 course_id, schedule_start, schedule_end, start_time, end_time, day_of_week, building_name, room_number, group_name, and similar attributes directly extracted from the source tables.
 
 Together, these concepts capture the structural, relational, and operational elements required for schedule-based reasoning in the Knowledge Graph. During this activity, concepts were classified into Core, Contextual, and Custom categories based on their contribution to Competency Question coverage. Concepts that did not support reasoning tasks or did not appear in the datasets were removed from the language, as documented in Section 7.3.
@@ -36,11 +36,11 @@ Core domain concepts such as Student, Course, Curriculum, and Program were easy 
 
 The second activity involved aligning the selected concepts with the Universal Knowledge Core (UKC) to ensure semantic consistency and reuse of established ontology definitions. Each concept was reviewed to determine whether a corresponding UKC entry existed and whether its semantics matched the requirements of the academic scheduling domain.
 
-Concepts aligned with UKC:
+- **Concepts aligned with UKC:**
 Student, Program, Curriculum, Course, Time_slot, Academic_year, Academic_term.
 These concepts had clear UKC equivalents, enabling reuse of well-established semantic structures and reducing ambiguity.
 
-Concepts not available in UKC:
+- **Concepts not available in UKC:**
 Course_schedule, Curriculum_course, Planned_course, Selected_course, Prerequisite, Moment.
 These represent domain-specific structures or operational activities not covered by UKC. They were therefore defined as new concepts and assigned project-specific identifiers (GID 500XX). All glosses were written following UKC conventions to maintain terminological consistency.
 
@@ -62,29 +62,29 @@ In this stage, all collected resources were examined to determine whether they w
 
 The following classes and properties were excluded:
 
-Academic_year and Academic_term:
+- **Academic_year and Academic_term:**
 Academic periods (e.g., Fall 2025) are already implicitly handled through schedule duplication and conflict checking. Explicit modeling would add complexity without improving reasoning capabilities.
 
-course_name as a separate Name entity:
+- **course_name as a separate Name entity:
 Course names are sufficiently represented as literal attributes of the Course entity. No multilingual or identity-linking requirements justified a separate entity.
 
-credits:
+- **credits:**
 Credit hours are not used in any Competency Questions or reasoning tasks related to scheduling, and were therefore removed.
 
-planned_id, selected_id, timestamp:
+planned_id, selected_id, timestamp:**
 These system-level metadata fields were not semantically connected to other entities and would have resulted in isolated nodes.
 
 ### 3.3.2 Filtering Rationale
 
-Filtering decisions were guided by the following principles:
+- Filtering decisions were guided by the following principles:
 
-Eliminate unused information
+- Eliminate unused information
 
-Avoid redundant representations
+- Avoid redundant representations
 
-Prevent isolated nodes
+- Prevent isolated nodes
 
-Reduce overall model complexity
+- Reduce overall model complexity
 
 This ensured that the Knowledge Graph remained efficient, interpretable, and focused on its intended purpose.
 
@@ -92,16 +92,16 @@ This ensured that the Knowledge Graph remained efficient, interpretable, and foc
 
 The Language Definition phase produced the following key outputs:
 
-Purpose-specific conceptual vocabulary
+- **Purpose-specific conceptual vocabulary**
 A complete set of ETypes, linking entities, object properties, and data properties required to model the academic scheduling domain.
 
-UKC-aligned concept set
+- **UKC-aligned concept set**
 Reusable concepts aligned with UKC definitions, alongside clearly defined domain-specific concepts with project identifiers.
 
-Filtered and aligned dataset schema
+- **Filtered and aligned dataset schema**
 A simplified yet semantically robust schema supporting effective reasoning tasks.
 
-Final Language Resource Sheet
+- **Final Language Resource Sheet**
 A consolidated spreadsheet containing identifiers, labels, glosses, superclasses, and mappings, ready for Phase 4 (Resource-to-KG Mapping).
 
 ## 3.5 Summary
